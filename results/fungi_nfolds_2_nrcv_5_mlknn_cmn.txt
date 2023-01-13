@@ -1,0 +1,22 @@
+"val" "sd" "k"
+"hamming-loss" 0.2204 0.0123 5
+"coverage" 5.4174 0.1804 5
+"ranking-loss" 0.1519 0.0077 5
+"F1" 0.6281 0.0247 5
+"macro-F1" 0.4875 0.0376 5
+"micro-F1" 0.6389 0.0269 5
+"macro-AUC" 0.7482 0.0141 5
+"micro-AUC" 0.8353 0.0065 5
+"subset-accuracy" 0.1238 0.0346 5
+"average-precision" 0.8008 0.0103 5
+"val" "sd" "k"
+"hamming-loss" 0.2204 0.0123 5
+"coverage" 5.4174 0.1804 5
+"ranking-loss" 0.1519 0.0077 5
+"F1" 0.6281 0.0247 5
+"macro-F1" 0.4878 0.034 7
+"micro-F1" 0.6389 0.0269 5
+"macro-AUC" 0.7485 0.0098 7
+"micro-AUC" 0.8353 0.0065 5
+"subset-accuracy" 0.1238 0.0346 5
+"average-precision" 0.8008 0.0103 5

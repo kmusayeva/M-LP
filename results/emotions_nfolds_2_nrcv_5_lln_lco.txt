@@ -1,0 +1,33 @@
+"val" "sd" "nn" "reg"
+"hamming-loss" 0.234 0.0167 9 0.6
+"coverage" 2.322 0.1148 9 0.6
+"ranking-loss" 0.2662 0.0229 9 0.6
+"F1" 0.584 0.0287 9 0.6
+"macro-F1" 0.6023 0.0281 9 0.6
+"micro-F1" 0.6104 0.029 9 0.6
+"macro-AUC" 0.7103 0.0191 7 0.4
+"micro-AUC" 0.7165 0.0197 9 0.6
+"subset-accuracy" 0.2708 0.0167 5 0.6
+"average-precision" 0.7242 0.0194 9 0.6
+"val" "sd" "nn" "reg"
+"hamming-loss" 0.2479 0.0119 5 0.2
+"coverage" 2.3913 0.0741 5 0.2
+"ranking-loss" 0.2779 0.0137 5 0.2
+"F1" 0.5716 0.0188 5 0.2
+"macro-F1" 0.5904 0.0191 5 0.2
+"micro-F1" 0.5971 0.0194 5 0.2
+"macro-AUC" 0.7029 0.0131 5 0.2
+"micro-AUC" 0.7078 0.0138 5 0.2
+"subset-accuracy" 0.2566 0.0129 5 0.2
+"average-precision" 0.7095 0.0121 5 0.2
+"val" "sd" "nn" "reg"
+"hamming-loss" 0.2479 0.0119 5 0.2
+"coverage" 2.3913 0.0741 5 0.2
+"ranking-loss" 0.2779 0.0137 5 0.2
+"F1" 0.5716 0.0188 5 0.2
+"macro-F1" 0.5904 0.0191 5 0.2
+"micro-F1" 0.5971 0.0194 5 0.2
+"macro-AUC" 0.7029 0.0131 5 0.2
+"micro-AUC" 0.7078 0.0138 5 0.2
+"subset-accuracy" 0.2566 0.0129 5 0.2
+"average-precision" 0.7095 0.0121 5 0.2
