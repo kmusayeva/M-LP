@@ -2,14 +2,13 @@
 # copyright (C) 2023 K.Musayeva
 # This file contains examples on how to run the label propagation 
 # algorithms, the harmonic function as a stacking method, as well as the 
-# inductive methods used in the paper: 
-# K. Musayeva and M. Binois, "Revisiting multi-label propagation: the case of small data", 2023.
+# inductive methods used in the paper
 ##################################################################################################
 
 rm(list=ls()) 
 
 ### change to the right directory
-root_dir <- "~/RProject/M-LP/"
+root_dir <- "~/M-LP/"
 results_dir <- "results/"
 source_file_dir <- "src/"
 
@@ -42,7 +41,7 @@ method <- list(name="hf", df="lco")
 
 #method <- list(name="cm", df="cmn")
 
-method <- list(name="lln", df="lco")
+#method <- list(name="lln", df="lco")
 
 ### hyperparameters (example for each method)
 
@@ -53,13 +52,13 @@ hyperparams <- list(sigma=seq(0.5, 1, by=0.2), nn=seq(25, 65, 5))
 #hyperparams <- list(iter=seq(1, 20, by=2),sigma=seq(1.2, 2, by=0.2), nn=seq(35, 65, 5))
 
 ###lln
-hyperparams <- list(nn=seq(5, 5, 2), reg=seq(0.2, 0.2,0.2))
+#hyperparams <- list(nn=seq(5, 5, 2), reg=seq(0.2, 0.2,0.2))
 
 ###cm
-hyperparams <- list(sigma=seq(0.1, 1, by=0.2), reg=seq(0.05,0.5,0.05))
+#hyperparams <- list(sigma=seq(0.1, 1, by=0.2), reg=seq(0.05,0.5,0.05))
 
 ###dlp
-hyperparams <- list(iter=seq(1,5,1), sigma=seq(1, 2, by=0.2), nn=seq(15, 50, 5), lambda=c(0.01), alpha=c(0.0001))
+#hyperparams <- list(iter=seq(1,5,1), sigma=seq(1, 2, by=0.2), nn=seq(15, 50, 5), lambda=c(0.01), alpha=c(0.0001))
 
 
 ### cross validates the method and saves the performance of the method on the hyperparameter grid to a file
@@ -84,7 +83,6 @@ stacking <- list(method=list(name="br", df="cmn"), params=list(conf=ks$params, a
 method <- list(name="hf", df="lco") 
 
 hyperparams <- list(sigma=seq(1.2, 2, by=0.2), nn=seq(25, 60, 5))
-
 
 result <- mlp_cross_validate(X, Y, method, hyperparams, stacking=stacking, data_name, verbose=T)
 
