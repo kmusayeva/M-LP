@@ -1,0 +1,11 @@
+"val" "sd" "sigma" "nn"
+"hamming-loss" 0.0927 0.0056 1.9 20
+"coverage" 0.5457 0.031 1.9 20
+"ranking-loss" 0.0921 0.0065 1.9 20
+"F1" 0.7414 0.0148 1.9 20
+"macro-F1" 0.7393 0.0143 1.9 20
+"micro-F1" 0.7354 0.0152 1.9 20
+"macro-AUC" 0.9048 0.0079 1.5 20
+"micro-AUC" 0.9129 0.0072 1.9 20
+"subset-accuracy" 0.6919 0.0137 1.9 20
+"average-precision" 0.8524 0.01 1.9 20
