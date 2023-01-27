@@ -1,5 +1,5 @@
 ####################################################
-# copyright (C) 2023 K.Musayeva
+# copyright (c) 2023 K.Musayeva
 ####################################################
 
 ### Creates the Euclidean distance matrix of the input data.
