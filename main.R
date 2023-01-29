@@ -9,8 +9,9 @@ rm(list=ls())
 
 ### change to the right directory
 root_dir <- "~/M-LP/"
-results_dir <- "results/"
 source_file_dir <- "src/"
+results_dir <- "results/"
+
 
 ### load all source files
 setwd(dir=root_dir) 
