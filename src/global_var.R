@@ -22,3 +22,6 @@ measures_to_optimize <- c("hamming-loss", "F1", "macro-F1", "micro-F1", "macro-A
 
 # loss functions
 loss <- c("hamming-loss","coverage","ranking-loss")
+
+# thresholds used in lco decision function
+thresholds <- seq(0.01, 0.9, by=0.01)
