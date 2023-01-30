@@ -1,5 +1,5 @@
 #####################################################################################
-# copyright (C) 2023 K.Musayeva
+# copyright (c) 2023 K.Musayeva
 # This file contains the implementation of the following label
 # propagation algorithms: 
 # 1. Harmonic function and iterative label propagation (Musayeva and Binois, 2023)
