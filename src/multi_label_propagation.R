@@ -17,7 +17,7 @@ mlp <- function(method, X, Y, label, hyperparam, dist_matrix_squared) {
   if((method$name %in% c("hf", "cm", "lln", "dlp", "tram"))==F) stop("Available methods: hf, cm, lln, dlp, tram", call. = FALSE)
 
   ### lln and tram methods have their decision functions
-   if(method$name  %in% c("lln", "tram")) {
+  if(method$name  %in% c("lln", "tram")) {
     return(do.call(method$name, list(Y, label, dist_matrix_squared, hyperparam)))
     }
 
