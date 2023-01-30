@@ -8,8 +8,6 @@
 
 
 ### implements the thresholding strategy of Read et al., 2011: we refer to it as the label cardinality optimizer (lco)
-thresholds <- seq(0.01, 0.9, by=0.01)
-
 which_threshold <- function(Y_train, preds) {
 
   lcard <- sum(Y_train)/(nrow(Y_train))
