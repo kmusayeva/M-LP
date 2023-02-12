@@ -39,7 +39,7 @@ Some reproducibiltiy notes:
 
     we experimented with different values for this parameter and for the scene dataset, we found that very small values of alpha, for instance, {0.05, 0.1} 
 
-    (this implies smaller input from the propagation matrix) coupled with the class-mass normalization thresholding strategy produced superior results,
+    (this implies a small input from the propagation matrix) coupled with the class-mass normalization thresholding strategy produced superior results,
 
     however, if we couple it with the label cardinality optimizer the results are meaningless. 
     
