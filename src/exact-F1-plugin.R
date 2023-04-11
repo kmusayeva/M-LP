@@ -30,37 +30,41 @@ exact_F1_plugin_evaluate <- function(X, Y, trainlist, measures, alpha, lambda) {
   Yzeroes <- ifelse(SY>0,0,1) #all zeroes
   
   l <- length(trainlist)  
-  performance.eval <- matrix(rep(0, l*length(measures)), ncol=length(measures))
+  performance_eval <- matrix(rep(0, l*length(measures)), ncol=length(measures))
   
   for(k in 1:l) {
     
     label <- trainlist[[k]]
+    
     X_train <- X[label,]
-    Y.train <- Y[label,]
+    
+    Y_train <- Y[label,]
+    
     X_test <- X[-label,]
-    Y.test <- Y[-label,]
+    
+    Y_test <- Y[-label,]
     
     YS_train <- YS[label,]
     
-    Yzeroes.train <- Yzeroes[label]
+    Yzeroes_train <- Yzeroes[label]
     
-    preds <- exact_F1_plugin(X_train,YS_train,Yzeroes.train,X_test, m, alpha, lambda) 
+    preds <- exact_F1_plugin(X_train, YS_train, Yzeroes_train, X_test, m, alpha, lambda) 
     
-    Ytest.mldr <- mldr_from_dataframe(as.data.frame(Y.test), labelIndices=c(1:m))
+    Ytest_mldr <- mldr_from_dataframe(as.data.frame(Y_test), labelIndices=c(1:m))
     
-    result <- multilabel_evaluate(Ytest.mldr, preds, measures, labels=TRUE)
+    result <- multilabel_evaluate(Ytest_mldr, preds, measures, labels=TRUE)
     
     result <- result$multilabel
     
-    performance.eval[k,] <- result
+    performance_eval[k,] <- result
     
         }
   
-  colnames(performance.eval) <- names(result)
-  cv.performance <- data.frame(ave=colMeans(performance.eval),sd=apply(performance.eval, 2, sd))
+  colnames(performance_eval) <- names(result)
+  cv_performance <- data.frame(ave=colMeans(performance_eval),sd=apply(performance_eval, 2, sd))
   
-  cv.performance <- cv.performance[measures,]
-  cv.performance
+  cv_performance <- cv_performance[measures,]
+  cv_performance
   
   }
 
@@ -82,17 +86,17 @@ exact_F1_plugin <- function(X_train, YS_train, Yzeroes_train, X_test, m, alpha, 
     
     
     if(length(tmp)>0) {
-      
+
       row_ind <- which(YS_train[,i] %in% as.numeric(names(YS.i.freq[tmp])))
-      
-      X_train <- X_train[-row_ind,]
-      
+
+      X_train_prime <- X_train[-row_ind,]
       YS_train_prime <- YS_train[-row_ind, i]
-    
+  
        }  
 
     else {
-
+      
+      X_train_prime <- X_train
       YS_train_prime <- YS_train[,i]
 
       }
@@ -102,9 +106,7 @@ exact_F1_plugin <- function(X_train, YS_train, Yzeroes_train, X_test, m, alpha, 
    
     L <- sapply((YS_train_prime),function(x) which(indices==x)) ### for instance (1,3,4) ---> (1,2,3)
 
-    print
-    
-    model <- glmnet(X_train, y=L, family="multinomial", lambda=lambda, alpha=alpha) 
+    model <- glmnet(X_train_prime, y=L, family="multinomial", lambda=lambda, alpha=alpha) 
     
     res <- predict(model, newx=as.matrix(X_test), type="response")
 
@@ -121,26 +123,25 @@ exact_F1_plugin <- function(X_train, YS_train, Yzeroes_train, X_test, m, alpha, 
   # h0 <-Pzeroes[,,1][,2]
 
   ### Step 2: compute Delta matrix and formula (8)
-  
-  # s <- sort(unique(SY),decreasing = FALSE)
+    # s <- sort(unique(SY),decreasing = FALSE)
   # if(length(s)<m) s <- c(s,rep(0,m-length(s)))
   
-  test.n <- nrow(X_test)
+  test_n <- nrow(X_test)
   
-  hk <- matrix(0, nrow=test.n, ncol=m)
+  hk <- matrix(0, nrow=test_n, ncol=m)
   
   sm <- matrix(rep(c(1:m),each=m),nrow=m,byrow=TRUE)
   
   W <- 1/(sapply(1:m, function(i) sm[,i]+i))
   
   
-  for(i in 1:test.n) {
+  for(i in 1:test_n) {
     
     P <- matrix(PY[i,], nrow=m, byrow = TRUE)[,2:(m+1)]
     
     delta <- P %*% W
     
-    result.best <- 0
+    result_best <- 0
     
     for(k in 1:m) {
       
@@ -148,18 +149,14 @@ exact_F1_plugin <- function(X_train, YS_train, Yzeroes_train, X_test, m, alpha, 
       
       res <- sum(delta[ind,k])
       
-      if(result.best < res) { result.best <- res; labels.best<-rep(0,m); labels.best[ind]<-1 }
+      if(result_best < res) { result_best <- res; labels_best<-rep(0,m); labels_best[ind]<-1 }
       
       }
     
-    hk[i,] <- labels.best
+    hk[i,] <- labels_best
     
   }
   
   return(hk)
   
 }
-
-
-
-
