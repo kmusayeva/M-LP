@@ -30,24 +30,3 @@ Running instructions:
 
     The reported results are obtained by applying the ks_solution to the results/name_data_*.obj file.
 
-
-Some reproducibiltiy notes:
-
-    In the consistency method ("Learning with local and global consistency," D. Zhou et al., 2004) and  in the locally linear neighbourhood method
-
-    (“Label propagation through linear neighborhoods,” Wang and C. Zhang, 2007) the regularization parameter alpha is defaulted to 0.99. In our work,
-
-    we experimented with different values for this parameter and for the scene dataset, we found that very small values of alpha, for instance, {0.05, 0.1} 
-
-    (this implies a small input from the propagation matrix) coupled with the class-mass normalization thresholding strategy produced superior results,
-
-    however, if we couple it with the label cardinality optimizer the results are meaningless. 
-    
-
-        
-
-
-
-
-
-
