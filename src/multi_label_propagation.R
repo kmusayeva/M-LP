@@ -35,6 +35,7 @@
 #' @return predictions for unlabeled points
 #'
 #' @export
+
 mlp <- function(method, X, Y, label, hyperparam, dist_matrix_squared) {
   # if((method$name %in% c("hf", "cm", "lln", "dlp", "tram")) == FALSE) stop("Available methods: hf, cm, lln, dlp, tram", call. = FALSE)
   
