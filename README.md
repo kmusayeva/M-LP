@@ -1,5 +1,5 @@
 
-This project implements the experiments section of the paper K. Musayeva and M. Binois, "Revisiting multi-label propagation: the case of small data", 2023.
+This project implements the experiments section of the paper "Improved Multi-Label Propagation for Small Data with Multi-Objective Optimization", K.Musayeva and M.Binois, 2023.
 
 The repository is as follows:
     
