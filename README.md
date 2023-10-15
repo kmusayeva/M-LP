@@ -14,19 +14,19 @@ The repository is as follows:
 
 Running instructions:
 
-    main.R : this is where the project should be run. This file contains the examples for running each method considered in the paper.
+main.R : this is where the project should be run. This file contains the examples for running each method considered in the paper.
 
-    The following variables should be specified: the name of the method, the decision function used and the hyperparameter list. 
+The following variables should be specified: the name of the method, the decision function used and the hyperparameter list. 
             
-    The evaluation measures used and the parameters of the cross-validation should be modified in the global_var.R file.
+The evaluation measures used and the parameters of the cross-validation should be modified in the global_var.R file.
 
-    To run the harmonic function as a stacking method, you need to first run the method, the predictions of which you want to 
+To run the harmonic function as a stacking method, you need to first run the method, the predictions of which you want to 
 
-    use in the stacking (the results are saved automatically into results/name_data_*.obj file). Then the compromise solution, 
+use in the stacking (the results are saved automatically into results/name_data_*.obj file). Then the compromise solution, 
 
-    more precisely, the hyperparameter configuration corresponding to the compromise solution should be computed from this .obj file. 
+more precisely, the hyperparameter configuration corresponding to the compromise solution should be computed from this .obj file. 
 
-    This hyperparameter configuration is then used in the stacking. 
+This hyperparameter configuration is then used in the stacking. 
 
-    The reported results are obtained by applying the ks_solution to the results/name_data_*.obj file.
+The reported results are obtained by applying the ks_solution to the results/name_data_*.obj file.
 
