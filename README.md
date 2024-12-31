@@ -40,7 +40,7 @@ D^{'}_{jj}=\sum_{i=1}^{n} W_{ij}
 
 * Section 4: $A_{ii}$ should be
 ```math
-A_{ii}=\sum_{j=1}^C \tilde{\mathbf{Y}}_{ij}$
+A_{ii}=\sum_{j=1}^C \tilde{\mathbf{Y}}_{ij}
 ```
 and $B_{jj}$ should be
 ```math
